@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addCharacterById } from "../actions/index";
+
 class CharachterList extends Component {
   render() {
     console.log("this.props", this.props);
     return (
       <div>
         <h4>CharachterList</h4>
-        <ul>
+        <ul className="List-group">
           {this.props.charchters.map((charchter) => {
             return (
-              <li key={charchter.id}>
-                <div> {charchter.name}</div>
-                <div onClick={() => this.props.addCharacterById(charchter.id)}>
+              <li key={charchter.id} className ="List-group-item">
+                <div className="List-item"> {charchter.name}</div>
+                <div onClick={() => this.props.addCharacterById(charchter.id)} className="List-item">
                   +
                 </div>
               </li>
